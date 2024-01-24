@@ -1,0 +1,30 @@
+<resources>
+    <!-- Default screen margins, per the Android Design guidelines. -->
+
+    <dimen name="activity_horizontal_margin">16dp</dimen>
+    <dimen name="activity_vertical_margin">16dp</dimen>
+    <dimen name="nav_header_vertical_spacing">8dp</dimen>
+    <dimen name="nav_header_height">176dp</dimen>
+    <dimen name="fab_margin">16dp</dimen>
+    <dimen name="elevation_5dp">5dp</dimen>
+    <dimen name="corner_radius_10dp">10dp</dimen>
+    <dimen name="corner_radius_5dp">5dp</dimen>
+    <dimen name="padding_16dp">16dp</dimen>
+
+    <!--dp-->
+    <dimen name="height_weight_margin_16dp">16dp</dimen>
+    <dimen name="height_weight_margin_0dp">0dp</dimen>
+    <dimen name="height_weight_margin_10dp">10dp</dimen>
+    <dimen name="height_weight_margin_26dp">26dp</dimen>
+    <dimen name="height_weight_margin_20dp">20dp</dimen>
+    <dimen name="height_weight_margin_100dp">100dp</dimen>
+
+    <!--sp-->
+    <dimen name="text_size_16sp">16sp</dimen>
+    <dimen name="text_size_20sp">20sp</dimen>
+    <dimen name="text_size_18sp">18sp</dimen>
+    <dimen name="text_size_26sp">26sp</dimen>
+    <dimen name="height_weight_margin_5dp">5dp</dimen>
+    <dimen name="height_weight_margin_2dp">2dp</dimen>
+
+</resources>

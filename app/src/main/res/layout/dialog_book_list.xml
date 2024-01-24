@@ -1,0 +1,121 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:background="@android:color/transparent">
+
+    <View
+        android:layout_width="@dimen/_350sdp"
+        android:layout_height="@dimen/_1sdp"
+        android:layout_alignParentTop="true"/>
+
+    <androidx.cardview.widget.CardView
+        android:id="@+id/cv"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        app:cardCornerRadius="@dimen/_5sdp"
+        app:cardElevation="@dimen/_2sdp">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical">
+
+            <LinearLayout
+                android:id="@+id/lyoutTopSearch"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_alignParentTop="true"
+                android:paddingRight="@dimen/_10sdp"
+                android:layout_marginTop="@dimen/_5sdp"
+                android:paddingLeft="@dimen/_10sdp"
+                android:orientation="horizontal">
+
+                <TextView
+                    android:id="@+id/txtHeader"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:text=""
+                    android:layout_gravity="center"
+                    android:gravity="center"
+                    android:textSize="@dimen/_12sdp"
+                    android:textColor="@color/black"
+                    android:fontFamily="@font/airbnbcereal_black"
+                    android:padding="@dimen/_10sdp"
+                    android:paddingLeft="@dimen/_5sdp"
+                    android:paddingRight="@dimen/_5sdp"/>
+
+                <ImageView
+                    android:id="@+id/imgClose"
+                    android:layout_width="@dimen/_30sdp"
+                    android:layout_height="match_parent"
+                    android:layout_gravity="center"
+                    android:padding="@dimen/_4sdp"
+                    android:src="@drawable/ic_close_round"/>
+            </LinearLayout>
+
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="@dimen/_250sdp"
+                android:layout_marginStart="@dimen/_5sdp"
+                android:layout_marginTop="@dimen/_5sdp"
+                android:layout_marginEnd="@dimen/_5sdp"
+                android:layout_marginBottom="@dimen/_5sdp"
+                android:orientation="vertical">
+
+                <androidx.recyclerview.widget.RecyclerView
+                    android:id="@+id/rvList"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:overScrollMode="never"
+                    android:layout_marginTop="@dimen/_3sdp"
+                    android:layout_marginStart="@dimen/_5sdp"
+                    android:layout_marginEnd="@dimen/_5sdp"
+                    android:layout_marginBottom="@dimen/_10sdp"
+                    android:scrollbars="vertical"
+                    android:scrollIndicators="end"
+                    android:scrollbarSize="@dimen/_3sdp"
+                    android:visibility="visible" />
+
+
+                <TextView
+                    android:id="@+id/txtNoDataFound"
+                    android:layout_width="match_parent"
+                    android:layout_height="@dimen/_100sdp"
+                    android:layout_gravity="center"
+                    android:fontFamily="@font/airbnbcereal_light"
+                    android:gravity="center"
+                    android:text="No Data Found."
+                    android:textColor="@color/gray"
+                    android:textSize="@dimen/_12sdp"
+                    android:visibility="gone" />
+
+
+
+            </LinearLayout>
+
+
+            <TextView
+                android:id="@+id/txtSubmit"
+                android:layout_width="@dimen/_100sdp"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:background="@drawable/bg_language_selection"
+                android:fontFamily="@font/airbnbcereal_medium"
+                android:gravity="center"
+                android:layout_marginTop="@dimen/_20sdp"
+                android:layout_marginBottom="@dimen/_5sdp"
+                android:paddingTop="@dimen/_10sdp"
+                android:paddingBottom="@dimen/_10sdp"
+                android:text="Submit"
+                android:textColor="@color/white"
+                android:textSize="@dimen/_12sdp" />
+
+
+        </LinearLayout>
+    </androidx.cardview.widget.CardView>
+
+</RelativeLayout>

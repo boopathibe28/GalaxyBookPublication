@@ -1,0 +1,49 @@
+<resources>
+    <string name="navigation_drawer_open">Open navigation drawer</string>
+    <string name="navigation_drawer_close">Close navigation drawer</string>
+    <string name="nav_header_title">Android Studio</string>
+    <string name="nav_header_subtitle">android.studio@android.com</string>
+    <string name="nav_header_desc">Navigation header</string>
+    <string name="action_settings">Settings</string>
+    <string name="action_edit">Edit</string>
+    <string name="title_dashboard">Dashboard</string>
+    <string name="title_appointment">Appointment</string>
+    <string name="title_profile">Profile</string>
+
+    <string name="app_name">GalaxyBookPublication</string>
+    <string name="user_name">UserName</string>
+    <string name="password">Password</string>
+    <string name="email">EmailId</string>
+    <string name="save">Save</string>
+    <string name="new_form">New Form</string>
+    <string name="welcome_user">Hi! %s</string>
+    <string name="edit">Edit</string>
+    <string name="upload">Upload</string>
+    <string name="login">Login</string>
+    <string name="logout">Logout</string>
+    <string name="check_in">Checkin</string>
+    <string name="check_out">Checkout</string>
+    <string name="old_password">Old Password</string>
+    <string name="new_password">New Password</string>
+    <string name="confirm_password">Confirm Password</string>
+    <string name="appointment_type">Appointment Type</string>
+    <string name="last_checked_in_at">Last CheckedIn at</string>
+    <string name="last_checked_out_at">Last CheckedOut at</string>
+    <string name="submit">Submit</string>
+    <string name="enter_visit_review">Enter Visiting Review</string>
+    <string name="no_appointments">No Appointments Scheduled</string>
+    <string name="no_orders_appointment">No Orders are there for this appointment</string>
+    <string name="received_amt">Received Total amount is %s</string>
+
+    <string-array name="gender_selection">
+        <item>Male</item>
+        <item>Female</item>
+    </string-array>
+
+    <string-array name="appointment_selection">
+        <item>Payment Schedule</item>
+        <item>Specimen Schedule</item>
+    </string-array>
+    <!-- TODO: Remove or change this placeholder text -->
+    <string name="hello_blank_fragment">Hello blank fragment</string>
+</resources>

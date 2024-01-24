@@ -1,0 +1,39 @@
+{
+  "project_info": {
+    "project_number": "33452578138",
+    "project_id": "galaxy-book-publication",
+    "storage_bucket": "galaxy-book-publication.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:33452578138:android:6d20c93470b75321be8f63",
+        "android_client_info": {
+          "package_name": "com.galaxybookpublication"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "33452578138-v63de4vckhemhjstcfa069qca68rh6fm.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyDGsy3ygqo59LF8oEzv9EafucB43N-N0jM"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "33452578138-v63de4vckhemhjstcfa069qca68rh6fm.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

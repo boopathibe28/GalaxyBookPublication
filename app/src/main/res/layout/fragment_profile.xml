@@ -1,0 +1,306 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <com.google.android.material.progressindicator.CircularProgressIndicator
+            android:id="@+id/progressBar"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:indeterminate="true"
+            android:visibility="gone"
+            app:indicatorColor="@color/red_500"
+            android:elevation="2dp"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:trackColor="@color/red_200"
+            app:trackThickness="4dp" />
+        <ScrollView
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:scrollbars="vertical">
+
+            <androidx.constraintlayout.widget.ConstraintLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                tools:context=".views.ProfileFragment">
+
+                <View
+                    android:id="@+id/view"
+                    android:layout_width="match_parent"
+                    android:layout_height="@dimen/height_weight_margin_0dp"
+                    android:background="@color/red_500"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintHeight_percent="0.3"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toTopOf="parent" />
+
+                <ImageView
+                    android:id="@+id/imgProfile"
+                    android:layout_width="@dimen/height_weight_margin_100dp"
+                    android:layout_height="@dimen/height_weight_margin_100dp"
+                    android:src="@drawable/user_small"
+                    app:layout_constraintBottom_toBottomOf="@+id/view"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toTopOf="parent" />
+
+                <TextView
+                    android:id="@+id/edt_edit_image"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:gravity="end"
+                    android:text="@string/edit"
+                    android:textColor="@color/white"
+                    android:visibility="gone"
+                    app:layout_constraintBottom_toBottomOf="@id/imgProfile"
+                    app:layout_constraintEnd_toEndOf="@id/imgProfile"
+                    app:layout_constraintStart_toStartOf="@id/imgProfile" />
+
+                <Button
+                    android:id="@+id/btnUpload"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:backgroundTint="@color/white"
+                    android:text="@string/upload"
+                    android:textColor="@color/black"
+                    android:visibility="gone"
+                    app:layout_constraintEnd_toEndOf="@id/edt_edit_image"
+                    app:layout_constraintStart_toStartOf="@id/edt_edit_image"
+                    app:layout_constraintTop_toBottomOf="@id/edt_edit_image" />
+
+                <com.google.android.material.textfield.TextInputLayout
+                    android:id="@+id/textInputLayoutUserName"
+                    style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_margin="@dimen/height_weight_margin_20dp"
+                    android:elevation="@dimen/height_weight_margin_2dp"
+                    android:hint="@string/user_name"
+                    android:textColorHint="@color/black"
+                    app:boxStrokeColor="@color/red_200"
+                    app:boxStrokeWidthFocused="@dimen/height_weight_margin_2dp"
+                    app:endIconMode="clear_text"
+                    app:endIconTint="@color/red_200"
+                    app:hintTextColor="@color/red_200"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@+id/view"
+                    app:startIconDrawable="@drawable/icon_person_black_24"
+                    app:startIconTint="@color/red_200">
+
+                    <com.google.android.material.textfield.TextInputEditText
+                        android:id="@+id/etvUserName"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:enabled="false"
+                        tools:text="Manoj Kumar" />
+                </com.google.android.material.textfield.TextInputLayout>
+
+                <com.google.android.material.textfield.TextInputLayout
+                    android:id="@+id/textInputLayoutEmailId"
+                    style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_margin="@dimen/height_weight_margin_20dp"
+                    android:elevation="@dimen/height_weight_margin_2dp"
+                    android:hint="@string/email"
+                    android:textColorHint="@color/black"
+                    app:boxStrokeColor="@color/red_200"
+                    app:boxStrokeWidthFocused="@dimen/height_weight_margin_2dp"
+                    app:endIconMode="clear_text"
+                    app:endIconTint="@color/red_200"
+                    app:hintTextColor="@color/red_200"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@+id/textInputLayoutUserName"
+                    app:startIconDrawable="@drawable/icon_round_mail_24"
+                    app:startIconTint="@color/red_200">
+
+                    <com.google.android.material.textfield.TextInputEditText
+                        android:id="@+id/etvMailId"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:enabled="false"
+                        tools:text="manoj.kumar@gmail.com" />
+                </com.google.android.material.textfield.TextInputLayout>
+
+                <com.google.android.material.textfield.TextInputLayout
+                    android:id="@+id/textInputLayoutPhoneNo"
+                    style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_margin="@dimen/height_weight_margin_20dp"
+                    android:elevation="@dimen/height_weight_margin_2dp"
+                    android:enabled="false"
+                    android:hint="PhoneNo"
+                    android:textColorHint="@color/black"
+                    app:boxStrokeColor="@color/red_200"
+                    app:boxStrokeWidthFocused="@dimen/height_weight_margin_2dp"
+                    app:endIconMode="clear_text"
+                    app:endIconTint="@color/red_200"
+                    app:hintTextColor="@color/red_200"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@+id/textInputLayoutEmailId"
+                    app:startIconDrawable="@drawable/icon_call_24"
+                    app:startIconTint="@color/red_200">
+
+                    <com.google.android.material.textfield.TextInputEditText
+                        android:id="@+id/etvPhoneNo"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:enabled="false"
+                        tools:text="9999988888" />
+                </com.google.android.material.textfield.TextInputLayout>
+
+                <com.google.android.material.textfield.TextInputLayout
+                    android:id="@+id/textInputLayoutAddressNo"
+                    style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_margin="@dimen/height_weight_margin_20dp"
+                    android:elevation="@dimen/height_weight_margin_2dp"
+                    android:enabled="false"
+                    android:hint="Address"
+                    android:textColorHint="@color/black"
+                    android:visibility="visible"
+                    app:boxStrokeColor="@color/red_200"
+                    app:boxStrokeWidthFocused="@dimen/height_weight_margin_2dp"
+                    app:endIconMode="clear_text"
+                    app:endIconTint="@color/red_200"
+                    app:hintTextColor="@color/red_200"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@+id/textInputLayoutPhoneNo"
+                    app:startIconDrawable="@drawable/icon_round_mail_24"
+                    app:startIconTint="@color/red_200">
+
+                    <com.google.android.material.textfield.TextInputEditText
+                        android:id="@+id/etvAddress"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:enabled="false"
+                        android:focusable="false"
+                        tools:text="Coimbatore" />
+                </com.google.android.material.textfield.TextInputLayout>
+
+                <com.google.android.material.textfield.TextInputLayout
+                    android:id="@+id/textInputLayoutDob"
+                    style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_margin="@dimen/height_weight_margin_20dp"
+                    android:elevation="@dimen/height_weight_margin_2dp"
+                    android:enabled="false"
+                    android:hint="DOB"
+                    android:textColorHint="@color/black"
+                    android:visibility="gone"
+                    app:boxStrokeColor="@color/red_200"
+                    app:boxStrokeWidthFocused="@dimen/height_weight_margin_2dp"
+                    app:endIconMode="clear_text"
+                    app:endIconTint="@color/red_200"
+                    app:hintTextColor="@color/red_200"
+                    app:layout_constraintEnd_toEndOf="parent"
+
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@+id/textInputLayoutAddressNo"
+                    app:startIconDrawable="@drawable/icon_round_calendar_24"
+                    app:startIconTint="@color/red_200">
+
+                    <com.google.android.material.textfield.TextInputEditText
+                        android:id="@+id/etvDob"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:enabled="false"
+                        android:focusable="false" />
+                </com.google.android.material.textfield.TextInputLayout>
+
+                <androidx.appcompat.widget.AppCompatSpinner
+                    android:id="@+id/spinnerGender"
+                    android:layout_width="match_parent"
+                    android:layout_height="50dp"
+                    android:layout_margin="@dimen/height_weight_margin_20dp"
+                    android:drawableStart="@drawable/icon_call_24"
+                    android:elevation="@dimen/height_weight_margin_2dp"
+                    android:entries="@array/gender_selection"
+                    android:hint="Gender"
+                    android:paddingStart="20dp"
+                    android:textColorHint="@color/black"
+                    android:visibility="gone"
+                    app:boxStrokeColor="@color/red_200"
+                    app:boxStrokeWidthFocused="@dimen/height_weight_margin_2dp"
+                    app:endIconMode="clear_text"
+                    app:endIconTint="@color/red_200"
+                    app:hintTextColor="@color/red_200"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@+id/textInputLayoutDob"
+                    app:startIconTint="@color/red_200"
+                    tools:text="9999988888" />
+
+                <com.google.android.material.textfield.TextInputLayout
+                    android:id="@+id/textInputLayoutEmergencyContact"
+                    style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_margin="@dimen/height_weight_margin_20dp"
+                    android:elevation="@dimen/height_weight_margin_2dp"
+                    android:enabled="false"
+                    android:hint="Emergency Contact"
+                    android:textColorHint="@color/black"
+                    android:visibility="visible"
+                    app:boxStrokeColor="@color/red_200"
+                    app:boxStrokeWidthFocused="@dimen/height_weight_margin_2dp"
+                    app:endIconMode="clear_text"
+                    app:endIconTint="@color/red_200"
+                    app:hintTextColor="@color/red_200"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@+id/spinnerGender"
+                    app:startIconDrawable="@drawable/icon_call_24"
+                    app:startIconTint="@color/red_200">
+
+                    <com.google.android.material.textfield.TextInputEditText
+                        android:id="@+id/etvEmergencyContact"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:enabled="false"
+                        android:focusable="false"
+                        tools:text="9999988888" />
+                </com.google.android.material.textfield.TextInputLayout>
+
+                <TextView
+                    android:id="@+id/tvChangePassword"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_margin="@dimen/height_weight_margin_16dp"
+                    android:text="Change Password"
+                    android:textColor="@color/red_700"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@id/textInputLayoutEmergencyContact" />
+
+                <Button
+                    android:id="@+id/btnSave"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginBottom="@dimen/height_weight_margin_16dp"
+                    android:text="@string/save"
+                    android:visibility="gone"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@id/tvChangePassword" />
+
+            </androidx.constraintlayout.widget.ConstraintLayout>
+        </ScrollView>
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</layout>

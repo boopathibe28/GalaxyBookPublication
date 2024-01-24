@@ -1,0 +1,111 @@
+<?xml version="1.0" encoding="utf-8"?>
+<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <uses-feature
+        android:name="android.hardware.camera"
+        android:required="true" />
+
+    <uses-permission android:name="android.permission.INTERNET" />
+    <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
+    <uses-permission android:name="android.permission.ACCESS_FINE_LOCATION" />
+    <uses-permission android:name="android.permission.ACCESS_COARSE_LOCATION" />
+    <uses-permission android:name="android.permission.ACCESS_BACKGROUND_LOCATION" />
+    <uses-permission android:name="android.permission.CAMERA" />
+    <uses-permission android:name="android.permission.READ_EXTERNAL_STORAGE" />
+    <uses-permission android:name="android.permission.READ_MEDIA_IMAGES"/>
+
+    <uses-permission
+        android:name="android.permission.WRITE_EXTERNAL_STORAGE"
+        android:maxSdkVersion="34" />
+    <uses-permission
+        android:name="android.permission.MANAGE_EXTERNAL_STORAGE"
+        android:minSdkVersion="30"
+        tools:ignore="ScopedStorage" />
+    <uses-permission android:name="android.permission.FOREGROUND_SERVICE" />
+
+    <application
+        android:name=".api.MyApplication"
+        android:requestLegacyExternalStorage="true"
+        android:allowBackup="false"
+        android:dataExtractionRules="@xml/data_extraction_rules"
+        android:fullBackupContent="@xml/backup_rules"
+        android:icon="@mipmap/ic_launcher"
+        android:label="@string/app_name"
+        android:supportsRtl="true"
+        android:theme="@style/Theme.GalaxyBookPublication"
+        tools:targetApi="31">
+        <activity
+            android:name=".views.SplashActivity"
+            android:exported="true"
+            android:theme="@style/Theme.GalaxyBookPublication.NoActionBar">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+        </activity>
+
+        <activity
+            android:name=".views.MainActivity"
+            android:screenOrientation="portrait"
+            android:exported="true"
+            android:theme="@style/Theme.GalaxyBookPublication.NoActionBar" />
+
+        <activity
+            android:name=".activity.CreateClaimActivity"
+            android:screenOrientation="portrait"
+            android:exported="true"
+            android:theme="@style/Theme.GalaxyBookPublication.NoActionBar" />
+
+        <activity
+            android:name=".views.ChangePasswordActivity"
+            android:screenOrientation="portrait"
+            android:exported="true"
+            android:windowSoftInputMode="adjustResize" />
+        <activity
+            android:name=".views.LoginActivity"
+            android:screenOrientation="portrait"
+            android:exported="true"
+            android:theme="@style/Theme.GalaxyBookPublication.NoActionBar"
+            android:windowSoftInputMode="adjustResize" />
+        <activity
+            android:name=".views.AppointmentDetailsActivity"
+            android:screenOrientation="portrait"
+            android:exported="true"
+            android:windowSoftInputMode="adjustResize" />
+        <activity
+            android:name=".activity.PaymentActivity"
+            android:screenOrientation="portrait"
+            android:theme="@style/Theme.GalaxyBookPublication.NoActionBar"
+            android:exported="true"
+            android:windowSoftInputMode="adjustResize" />
+        <activity
+            android:name=".activity.SpecimenCreateActivity"
+            android:screenOrientation="portrait"
+            android:theme="@style/Theme.GalaxyBookPublication.NoActionBar"
+            android:exported="true"
+            android:windowSoftInputMode="adjustResize" />
+
+        <service android:name=".util.StopwatchService" />
+
+        <service
+            android:name=".util.LocationTrackerService"/>
+           <!-- android:foregroundServiceType="location"-->
+
+        <!-- Provider to cache images to the internal App cache -->
+        <provider
+            android:name="androidx.core.content.FileProvider"
+            android:authorities="${applicationId}.provider"
+            android:grantUriPermissions="true"
+            android:exported="false"
+            tools:replace="android:authorities">
+            <meta-data
+                android:name="android.support.FILE_PROVIDER_PATHS"
+                android:resource="@xml/file_paths" />
+        </provider>
+
+
+    </application>
+
+</manifest>

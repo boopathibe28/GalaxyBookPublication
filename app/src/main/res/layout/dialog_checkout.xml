@@ -1,0 +1,86 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="@drawable/dialog_corner_bg">
+
+        <TextView
+            android:id="@+id/tvCheckoutTitle"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_margin="@dimen/height_weight_margin_16dp"
+            android:gravity="center"
+            android:text="CHECKOUT"
+            android:textSize="@dimen/text_size_20sp"
+            app:layout_constraintBottom_toTopOf="@id/tvTotalAmtReceived"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <TextView
+            android:id="@+id/tvTotalAmtReceived"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_margin="@dimen/height_weight_margin_16dp"
+            android:gravity="center"
+            android:text="@string/received_amt"
+            app:layout_constraintBottom_toTopOf="@id/imgVisitedProof"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/tvCheckoutTitle" />
+
+        <ImageView
+            android:id="@+id/imgVisitedProof"
+            android:layout_width="@dimen/height_weight_margin_100dp"
+            android:layout_height="@dimen/height_weight_margin_100dp"
+            android:src="@drawable/user_small"
+            app:layout_constraintBottom_toTopOf="@id/tvUpload"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/tvTotalAmtReceived" />
+
+        <TextView
+            android:id="@+id/tvUpload"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/height_weight_margin_2dp"
+            android:text="Upload Visit Evidence"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/imgVisitedProof" />
+
+        <com.google.android.material.textfield.TextInputLayout
+            android:id="@+id/tvInputReview"
+            style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_margin="@dimen/height_weight_margin_16dp"
+            android:elevation="@dimen/height_weight_margin_2dp"
+            android:hint="@string/enter_visit_review"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/tvUpload">
+
+            <com.google.android.material.textfield.TextInputEditText
+                android:id="@+id/tvReview"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:inputType="textPostalAddress" />
+
+        </com.google.android.material.textfield.TextInputLayout>
+
+
+        <Button
+            android:id="@+id/btnCheckout"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_margin="@dimen/height_weight_margin_16dp"
+            android:text="Confirm Checkout"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/tvInputReview" />
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</layout>

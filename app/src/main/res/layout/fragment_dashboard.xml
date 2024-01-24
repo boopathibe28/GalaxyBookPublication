@@ -1,0 +1,172 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="@color/white"
+        tools:context=".views.DashboardFragment">
+
+        <View
+            android:id="@+id/view"
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/height_weight_margin_0dp"
+            android:background="@color/red_700"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHeight_percent="0.41"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <TextView
+            android:id="@+id/tvWelcomeName"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_margin="@dimen/height_weight_margin_16dp"
+            android:textColor="@color/white"
+            android:textSize="@dimen/text_size_18sp"
+            app:layout_constraintBottom_toTopOf="@id/cardViewTimer"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            tools:text="@string/welcome_user" />
+
+        <androidx.cardview.widget.CardView
+            android:id="@+id/cardViewTimer"
+            android:layout_width="200dp"
+            android:layout_height="200dp"
+            android:shape="ring"
+            app:cardElevation="@dimen/height_weight_margin_16dp"
+            android:layout_margin="@dimen/height_weight_margin_26dp"
+            app:layout_constraintBottom_toBottomOf="@id/tvTimeRunned"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:cardCornerRadius="96dp"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:orientation="vertical">
+
+                <TextView
+                    android:id="@+id/time_view"
+                    android:layout_width="wrap_content"
+                    android:layout_height="match_parent"
+                    android:layout_gravity="center"
+                    android:gravity="center_vertical"
+                    android:text="00:00:00"
+                    android:textSize="26sp"
+                    android:textStyle="bold" />
+
+            </LinearLayout>
+        </androidx.cardview.widget.CardView>
+
+        <Button
+            android:id="@+id/btnCheckIn"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:text="@string/check_in"
+            android:elevation="@dimen/height_weight_margin_16dp"
+            android:layout_marginTop="@dimen/height_weight_margin_16dp"
+            app:layout_constraintTop_toBottomOf="@id/cardViewTimer"
+            app:layout_constraintEnd_toEndOf="@id/cardViewTimer"
+            app:layout_constraintStart_toStartOf="@id/cardViewTimer" />
+
+        <Button
+            android:id="@+id/btnCheckOut"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:text="@string/check_out"
+            android:elevation="@dimen/height_weight_margin_16dp"
+            android:layout_marginTop="@dimen/height_weight_margin_16dp"
+            app:layout_constraintEnd_toEndOf="@id/cardViewTimer"
+            app:layout_constraintStart_toStartOf="@id/cardViewTimer"
+            app:layout_constraintTop_toBottomOf="@id/cardViewTimer" />
+
+        <ProgressBar
+            android:id="@+id/pbProgress"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:visibility="gone"
+            android:layout_marginTop="@dimen/height_weight_margin_16dp"
+            app:layout_constraintEnd_toEndOf="@id/cardViewTimer"
+            app:layout_constraintStart_toStartOf="@id/cardViewTimer"
+            app:layout_constraintTop_toBottomOf="@id/cardViewTimer" />
+
+        <TextView
+            android:id="@+id/tvTimeRunned"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:gravity="center"
+            android:textAlignment="center"
+            android:textSize="18sp"
+            android:textStyle="bold"
+            android:visibility="visible"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/btnCheckIn"
+            app:layout_constraintBottom_toBottomOf="parent"
+            tools:text="00" />
+
+        <androidx.cardview.widget.CardView
+            android:id="@+id/cardViewVisiters"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:elevation="@dimen/elevation_5dp"
+            android:visibility="gone"
+            app:cardCornerRadius="@dimen/corner_radius_5dp"
+            app:cardElevation="@dimen/elevation_5dp"
+            app:cardMaxElevation="@dimen/elevation_5dp"
+            android:layout_marginBottom="@dimen/height_weight_margin_26dp"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintWidth_default="percent"
+            app:layout_constraintWidth_percent="0.4">
+
+            <TextView
+                android:id="@+id/tvVisitors"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_margin="16dp"
+                android:gravity="center"
+                android:text="0"
+                android:textSize="@dimen/text_size_16sp"
+                android:textStyle="bold"
+                app:drawableBottomCompat="@drawable/team_small" />
+        </androidx.cardview.widget.CardView>
+
+
+        <androidx.cardview.widget.CardView
+            android:id="@+id/cardViewAppointment"
+            android:layout_width="@dimen/height_weight_margin_0dp"
+            android:layout_height="wrap_content"
+            android:elevation="@dimen/elevation_5dp"
+            android:visibility="gone"
+            app:cardCornerRadius="@dimen/corner_radius_5dp"
+            app:cardElevation="@dimen/elevation_5dp"
+            app:cardMaxElevation="@dimen/elevation_5dp"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="@id/cardViewTimer"
+            app:layout_constraintTop_toBottomOf="@id/cardViewTimer"
+            app:layout_constraintWidth_default="percent"
+            app:layout_constraintWidth_percent="0.4">
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_margin="@dimen/height_weight_margin_16dp"
+                android:gravity="center"
+                android:textSize="@dimen/text_size_16sp"
+                android:textStyle="bold"
+                app:drawableBottomCompat="@drawable/calendar_small"
+                tools:text="1000000" />
+
+        </androidx.cardview.widget.CardView>
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</layout>
