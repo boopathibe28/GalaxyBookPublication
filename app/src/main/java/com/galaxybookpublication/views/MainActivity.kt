@@ -33,6 +33,7 @@ import androidx.navigation.ui.setupActionBarWithNavController
 import androidx.navigation.ui.setupWithNavController
 import com.bumptech.glide.Glide
 import com.galaxybookpublication.R
+import com.galaxybookpublication.activity.LocationOnOff_Similar_To_Google_Maps
 import com.galaxybookpublication.api.CommonFunctions
 import com.galaxybookpublication.databinding.ActivityMainBinding
 import com.galaxybookpublication.models.repo.SharedPreferenceHelper
@@ -114,6 +115,10 @@ class MainActivity : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         mFusedLocationClient = LocationServices.getFusedLocationProviderClient(this)
+
+
+        val intent = Intent(this@MainActivity, LocationOnOff_Similar_To_Google_Maps::class.java)
+        startActivity(intent)
 
         locationRequest = LocationRequest.Builder(Priority.PRIORITY_HIGH_ACCURACY, 1 * 1000).apply {
             setMinUpdateDistanceMeters(0.0f)

@@ -22,6 +22,7 @@ import androidx.fragment.app.Fragment
 import androidx.lifecycle.Observer
 import androidx.lifecycle.ViewModelProvider
 import com.galaxybookpublication.R
+import com.galaxybookpublication.activity.LocationOnOff_Similar_To_Google_Maps
 import com.galaxybookpublication.activity.SpecimenCreateActivity
 import com.galaxybookpublication.api.CommonFunctions
 import com.galaxybookpublication.api.CommonFunctions.CheckStatus
@@ -183,6 +184,9 @@ class DashboardFragment : Fragment(), ServiceCallBacks {
                /* if (checkAndRequestPermissions(requireActivity())) {
                     chooseImage(requireActivity())
                 }*/
+            val intent = Intent(requireActivity(), LocationOnOff_Similar_To_Google_Maps::class.java)
+            startActivity(intent)
+
             chooseImage(requireActivity())
             CheckStatus = "true"
 
@@ -194,6 +198,8 @@ class DashboardFragment : Fragment(), ServiceCallBacks {
                 /*if (checkAndRequestPermissions(requireActivity())) {
                     chooseImage(requireActivity())
                 }*/
+            val intent = Intent(requireActivity(), LocationOnOff_Similar_To_Google_Maps::class.java)
+            startActivity(intent)
             chooseImage(requireActivity())
             CheckStatus = "false"
            // (activity as MainActivity).startCheckIn(isCheckIn = false)
