@@ -66,6 +66,10 @@ class ClientAppointmentListFragment : Fragment() {
         appointmentStatus = arguments?.getString("appointmentStatus").toString()
         clientId = arguments?.getString("clientId").toString()
 
+        if (checkin != null && !checkin.equals("null") && !checkin.isEmpty()){
+            clientAppointmentBinding.btnCheckIn.visibility = View.GONE
+        }
+
         clientAppointmentViewModel.checkoutLiveData.observe(viewLifecycleOwner) {
             Toast.makeText(requireContext(), it.message, Toast.LENGTH_SHORT).show()
             MainActivity.hashMapPaymentAmtTrack = hashMapOf()
