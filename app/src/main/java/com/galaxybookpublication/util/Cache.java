@@ -45,7 +45,7 @@ public class Cache {
             cachePath.mkdirs();
 
             FileOutputStream stream = new FileOutputStream(cachePath + "/" + fileName + FILE_EXTENSION);
-            bitmap.compress(Bitmap.CompressFormat.PNG, COMPRESS_QUALITY, stream);
+           // bitmap.compress(Bitmap.CompressFormat.PNG, COMPRESS_QUALITY, stream);
             stream.close();
         } catch (Exception e) {
             Log.e(TAG, "saveImgToCache error: " + bitmap, e);

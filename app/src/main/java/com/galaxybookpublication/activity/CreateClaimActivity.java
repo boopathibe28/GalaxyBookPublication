@@ -354,7 +354,7 @@ public class CreateClaimActivity extends AppCompatActivity implements View.OnCli
         OutputStream os;
         try {
             os = new FileOutputStream(imageFile);
-            bitmap.compress(Bitmap.CompressFormat.JPEG, 100, os);
+           // bitmap.compress(Bitmap.CompressFormat.JPEG, 100, os);
             os.flush();
             os.close();
             uploadImage = imageFile;
