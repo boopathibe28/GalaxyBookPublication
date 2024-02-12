@@ -25,7 +25,7 @@ public class Cache {
     private static final String TEMP_FILE_NAME = "img";
     private static final String FILE_EXTENSION = ".png";
 
-    private static final int COMPRESS_QUALITY = 100;
+    private static final int COMPRESS_QUALITY = 90;
 
     /**
      * Save image to the App cache
@@ -45,7 +45,7 @@ public class Cache {
             cachePath.mkdirs();
 
             FileOutputStream stream = new FileOutputStream(cachePath + "/" + fileName + FILE_EXTENSION);
-           // bitmap.compress(Bitmap.CompressFormat.PNG, COMPRESS_QUALITY, stream);
+            bitmap.compress(Bitmap.CompressFormat.PNG, COMPRESS_QUALITY, stream);
             stream.close();
         } catch (Exception e) {
             Log.e(TAG, "saveImgToCache error: " + bitmap, e);

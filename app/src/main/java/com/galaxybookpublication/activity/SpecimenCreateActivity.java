@@ -437,7 +437,7 @@ public class SpecimenCreateActivity extends AppCompatActivity implements View.On
         OutputStream os;
         try {
             os = new FileOutputStream(imageFile);
-           // bitmap.compress(Bitmap.CompressFormat.JPEG, 100, os);
+            bitmap.compress(Bitmap.CompressFormat.JPEG, 90, os);
             os.flush();
             os.close();
             uploadImage = imageFile;
