@@ -427,11 +427,11 @@ class DashboardFragment : Fragment(), ServiceCallBacks {
 
     private fun persistImage(bitmap: Bitmap?, name: String?) {
         val filesDir: File = requireActivity().getFilesDir()
-        val imageFile = File(filesDir, "Test" + ".jpg")
+        val imageFile = File(filesDir, "Test" + ".png")
         val os: OutputStream
         try {
             os = FileOutputStream(imageFile)
-            bitmap!!.compress(Bitmap.CompressFormat.JPEG, 90, os)
+            bitmap!!.compress(Bitmap.CompressFormat.PNG, 100, os)
             os.flush()
             os.close()
             uploadImage = imageFile

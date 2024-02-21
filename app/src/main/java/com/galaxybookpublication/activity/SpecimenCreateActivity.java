@@ -403,7 +403,8 @@ public class SpecimenCreateActivity extends AppCompatActivity implements View.On
                     if (resultCode == RESULT_OK && data != null) {
                         Bitmap selectedImage = (Bitmap) data.getExtras().get("data");
                         binding.imgPic.setImageBitmap(selectedImage);
-                        persistImage(selectedImage,data.getDataString());
+                       // persistImage(selectedImage,data.getDataString());
+                        persistImage(getResizedBitmap(selectedImage,720,1280),data.getDataString());
                     }
                     break;
                 case 1:
@@ -432,18 +433,22 @@ public class SpecimenCreateActivity extends AppCompatActivity implements View.On
 
     private void persistImage(Bitmap bitmap, String name) {
         File filesDir = SpecimenCreateActivity.this.getFilesDir();
-        File imageFile = new File(filesDir, "Test" + ".jpg");
+        File imageFile = new File(filesDir, "Test" + ".png");
 
         OutputStream os;
         try {
             os = new FileOutputStream(imageFile);
-            bitmap.compress(Bitmap.CompressFormat.JPEG, 90, os);
+            bitmap.compress(Bitmap.CompressFormat.PNG, 100, os);
             os.flush();
             os.close();
             uploadImage = imageFile;
         } catch (Exception e) {
             Log.e(getClass().getSimpleName(), "Error writing bitmap", e);
         }
+    }
+
+    public Bitmap getResizedBitmap(Bitmap image, int bitmapWidth, int bitmapHeight) {
+        return Bitmap.createScaledBitmap(image, bitmapWidth, bitmapHeight, true);
     }
 
 }

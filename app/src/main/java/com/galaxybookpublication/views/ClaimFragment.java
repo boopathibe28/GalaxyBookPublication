@@ -537,10 +537,10 @@ public class ClaimFragment extends Fragment implements View.OnClickListener {
     private void onCaptureImageResult(Intent data) {
         Bitmap thumbnail = (Bitmap) data.getExtras().get("data");
         ByteArrayOutputStream bytes = new ByteArrayOutputStream();
-        thumbnail.compress(Bitmap.CompressFormat.JPEG, 90, bytes);
+        thumbnail.compress(Bitmap.CompressFormat.PNG, 100, bytes);
 
         File destination = new File(Environment.getExternalStorageDirectory(),
-                System.currentTimeMillis() + ".jpg");
+                System.currentTimeMillis() + ".png");
 
         uploadImage = destination;
 
@@ -573,7 +573,7 @@ public class ClaimFragment extends Fragment implements View.OnClickListener {
 
 //Convert bitmap to byte array
                     ByteArrayOutputStream bos = new ByteArrayOutputStream();
-                    bm.compress(Bitmap.CompressFormat.PNG, 0 , bos); // YOU can also save it in JPEG
+                    bm.compress(Bitmap.CompressFormat.PNG, 100 , bos); // YOU can also save it in JPEG
                     byte[] bitmapdata = bos.toByteArray();
 
 //write the bytes in file

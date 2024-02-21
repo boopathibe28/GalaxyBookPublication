@@ -84,10 +84,10 @@ class DashboardViewModel : ViewModel() {
                 if (response.isSuccessful) {
                     _dashboardLiveData.postValue(response.body())
                 } else {
-                    _dashboardLiveDataError.postValue("Error")
-                    // when (response.code()) {
+                    _dashboardLiveDataError.postValue(response.errorBody().toString())
+                     when (response.code()) {
                     //401 -> _logInLiveDataError.postValue( "Unauthorized! Invalid phone number or password")
-                    //  }
+                      }
                 }
             }
             catch (exception: Exception) {

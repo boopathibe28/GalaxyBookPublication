@@ -320,7 +320,7 @@ public class CreateClaimActivity extends AppCompatActivity implements View.OnCli
                     if (resultCode == RESULT_OK && data != null) {
                         Bitmap selectedImage = (Bitmap) data.getExtras().get("data");
                         binding.imgPic.setImageBitmap(selectedImage);
-                        persistImage(selectedImage,data.getDataString());
+                        persistImage(getResizedBitmap(selectedImage,720,1280),data.getDataString());
                     }
                     break;
                 case 1:
@@ -349,12 +349,12 @@ public class CreateClaimActivity extends AppCompatActivity implements View.OnCli
 
     private void persistImage(Bitmap bitmap, String name) {
         File filesDir = CreateClaimActivity.this.getFilesDir();
-        File imageFile = new File(filesDir, "Test" + ".jpg");
+        File imageFile = new File(filesDir, "Test" + ".png");
 
         OutputStream os;
         try {
             os = new FileOutputStream(imageFile);
-            bitmap.compress(Bitmap.CompressFormat.JPEG, 90, os);
+            bitmap.compress(Bitmap.CompressFormat.PNG, 100, os);
             os.flush();
             os.close();
             uploadImage = imageFile;
@@ -363,4 +363,8 @@ public class CreateClaimActivity extends AppCompatActivity implements View.OnCli
         }
     }
 
+
+    public Bitmap getResizedBitmap(Bitmap image, int bitmapWidth, int bitmapHeight) {
+        return Bitmap.createScaledBitmap(image, bitmapWidth, bitmapHeight, true);
+    }
 }
